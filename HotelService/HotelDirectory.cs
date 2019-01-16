@@ -23,6 +23,11 @@ namespace HotelService {
 			);
 		}
 
+		public bool ContainsHotel(string HotelName) {
+			if (HotelName == null) throw new ArgumentNullException(nameof(HotelName));
+			return HotelDictionary.ContainsKey(HotelName);
+		}
+
 		public void AddHotel(Hotel Hotel) {
 			if (Hotel == null) throw new ArgumentNullException(nameof(Hotel));
 			if (HotelDictionary.ContainsKey(Hotel.Name)) throw new HotelKeyAlreadyAddedException(Hotel.Name);
