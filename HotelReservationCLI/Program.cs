@@ -21,7 +21,7 @@ namespace HotelReservationCLI {
 				}
 			}
 
-			Console.ReadKey();
+			//Console.ReadKey();
 		}
 
 	}
