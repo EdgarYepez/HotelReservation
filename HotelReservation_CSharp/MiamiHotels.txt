@@ -1,6 +1,0 @@
-﻿### Registry organization:
-### <Name>, <Rating>, <WeekdayRegularRate>, <WeekdayRewardsRate>, <WeekendRegularRate>, <WeekendRewardsRate>
-
-Lakewood, 3, 110, 80, 90, 80
-Bridgewood, 4, 160, 110, 60, 50
-Ridgewood, 5, 220, 100, 150, 40

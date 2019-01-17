@@ -18,6 +18,10 @@ namespace HotelService {
 			this.Type = Type;
 		}
 
+		public override string ToString() {
+			return Type.ToString();
+		}
+
 		public sealed class Factory {
 
 			public static Client CreateFromString(string ClientString) {

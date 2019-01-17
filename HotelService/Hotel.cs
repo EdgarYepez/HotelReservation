@@ -47,6 +47,10 @@ namespace HotelService {
 			return Price;
 		}
 
+		public override string ToString() {
+			return $"{Name}, {Rating}, {WeekdayRate.ToString()}, {WeekendRate.ToString()}";
+		}
+
 		public sealed class Factory {
 
 			public static Hotel CreateFromString(string HotelString) {

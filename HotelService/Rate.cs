@@ -34,6 +34,10 @@ namespace HotelService {
 			return Rate;
 		}
 
+		public override string ToString() {
+			return $"{Regular}, {Rewards}";
+		}
+
 	}
 
 }
