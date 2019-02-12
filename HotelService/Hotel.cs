@@ -28,23 +28,18 @@ namespace HotelService {
 			return new HotelInvoice(this, Client, ReservationDates);
 		}
 
-		internal int ComputePrice(Client Client, ICollection<DateTime> ReservationDates) {
-			if (Client == null) throw new ArgumentNullException(nameof(Client));
-			if (ReservationDates == null) throw new ArgumentNullException(nameof(ReservationDates));
-
-			int Price = 0;
-			foreach (DateTime ReservationDate in ReservationDates) {
-				switch (ReservationDate.DayOfWeek) {
-					case DayOfWeek.Saturday:
-					case DayOfWeek.Sunday:
-						Price += WeekendRate.GetRateValueAccordingToClientType(Client);
-						break;
-					default:
-						Price += WeekdayRate.GetRateValueAccordingToClientType(Client);
-						break;
-				}
+		public Rate GetRateAccordingToDate(DateTime Date) {
+			Rate Ret = null;
+			switch (Date.DayOfWeek) {
+				case DayOfWeek.Saturday:
+				case DayOfWeek.Sunday:
+					Ret = WeekendRate;
+					break;
+				default:
+					Ret = WeekdayRate;
+					break;
 			}
-			return Price;
+			return Ret;
 		}
 
 		public override string ToString() {

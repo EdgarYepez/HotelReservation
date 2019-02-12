@@ -29,7 +29,19 @@ namespace HotelService {
 		}
 
 		public void RefreshPrice() {
-			_Price = new Lazy<int>(() => Hotel.ComputePrice(Client, ReservationDates));
+			_Price = new Lazy<int>(() => ComputePrice(Client, ReservationDates));
+		}
+
+		private int ComputePrice(Client Client, ICollection<DateTime> ReservationDates) {
+			if (Client == null) throw new ArgumentNullException(nameof(Client));
+			if (ReservationDates == null) throw new ArgumentNullException(nameof(ReservationDates));
+
+			int Price = 0;
+			foreach (DateTime ReservationDate in ReservationDates) {
+				Rate Rate = Hotel.GetRateAccordingToDate(ReservationDate);
+				Price += Rate.GetRateValueAccordingToClientType(Client);
+			}
+			return Price;
 		}
 
 	}

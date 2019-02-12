@@ -1,6 +1,8 @@
 ﻿using NUnit.Framework;
 
 using HotelService;
+using System;
+using System.Collections.Generic;
 
 namespace Tests.HotelService {
 
@@ -22,6 +24,45 @@ namespace Tests.HotelService {
 				Hotel.WeekendRate.Equals(WeekendRate)
 			);			
 		}
+
+		//[Test]
+		//public void ComputePriceShouldReturnWeekdayRateOnMonday() {
+		//	Client client = new Client(ClientType.Regular);
+		//	Hotel hotel = new Hotel("Quito", 5, new Rate(10, 20), new Rate(30, 40));
+		//	DateTime reservationDate = new DateTime(2019, 2, 11);
+		//	List<DateTime> reservationDates = new List<DateTime>();
+		//	reservationDates.Add(reservationDate);
+
+		//	int price = hotel.ComputePrice(client, reservationDates);
+
+		//	Assert.AreEqual(10, price);
+		//}
+
+		//[Test]
+		//public void ComputePriceShouldReturnRewardsRateOnSaturday() {
+		//	Client client = new Client(ClientType.Rewards);
+		//	Hotel hotel = new Hotel("Quito", 5, new Rate(10, 20), new Rate(30, 40));
+		//	DateTime reservationDate = new DateTime(2019, 2, 9);
+		//	List<DateTime> reservationDates = new List<DateTime>();
+		//	reservationDates.Add(reservationDate);
+
+		//	int price = hotel.ComputePrice(client, reservationDates);
+
+		//	Assert.AreEqual(40, price);
+		//}
+
+		//[Test]
+		//public void ComputePriceShouldReturnRegularRateOnSunday() {
+		//	Client client = new Client(ClientType.Regular);
+		//	Hotel hotel = new Hotel("Quito", 5, new Rate(10, 20), new Rate(30, 40));
+		//	DateTime reservationDate = new DateTime(2019, 2, 10);
+		//	List<DateTime> reservationDates = new List<DateTime>();
+		//	reservationDates.Add(reservationDate);
+
+		//	int price = hotel.ComputePrice(client, reservationDates);
+
+		//	Assert.AreEqual(30, price);
+		//}
 
 	}
 
